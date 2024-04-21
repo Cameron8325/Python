@@ -63,3 +63,27 @@ def recipe_search(data, search_term):
     for recipe in data:
         if recipe.search_ingredient(search_term):
             print(recipe)
+
+
+# Creating recipe objects
+tea = Recipe("Tea", 5)
+tea.add_ingredients("Tea Leaves", "Sugar", "Water")
+print(tea)
+
+coffee = Recipe("Coffee", 5)
+coffee.add_ingredients("Coffee Powder", "Sugar", "Water")
+
+cake = Recipe("Cake", 50)
+cake.add_ingredients("Sugar", "Butter", "Eggs", "Vanilla Essence", "Flour", "Baking Powder", "Milk")
+
+banana_smoothie = Recipe("Banana Smoothie", 5)
+banana_smoothie.add_ingredients("Bananas", "Milk", "Peanut Butter", "Sugar", "Ice Cubes")
+
+# List of recipes
+recipes_list = [tea, coffee, cake, banana_smoothie]
+
+# Searching for recipes containing specific ingredients
+ingredients_to_search = ["Water", "Sugar", "Bananas"]
+for ingredient in ingredients_to_search:
+    print(f"Recipes containing {ingredient}:")
+    recipe_search(recipes_list, ingredient)
